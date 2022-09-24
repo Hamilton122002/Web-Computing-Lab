@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function validateForm(inputText) {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x.length < 2) {
+                alert("Enter a Valid Name");
+                return false;
+            }
+            
+            let y = document.forms["myForm"]["email"].value;
+             if (y==""){
+                alert(" Enter a Valid E-mail");
+                return false;
+             }
+             
+            let z = document.forms["myForm"]["phone"].value;
+            if (z.length < 10) {
+                alert("Enter a valid Phone Number");
+                return false;
+            }
+            let p = document.forms["myForm"]["pwd"].value;
+            if (p.length < 6) {
+                alert("enter a valid Password");
+                return false;
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>JavaScript Validation Form</h2>
+
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        <label for="name"><b>Full Name</b></label>
+        <input type="text" placeholder="Enter Full Name" name="fname" id="fname" required><br><br>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required><br><br>
+
+        <label for="phone no"><b>Phone No</b></label>
+        <input type="number" maxlength = "10" placeholder="enter contact number" name="phone number" id="phone" required><br><br>
+
+       <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter the password" pwd="password" id="pwd" required><br><br>
+
+
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+
+</html>
